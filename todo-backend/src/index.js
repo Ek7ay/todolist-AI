@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 60001;
 
 // 中间件
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://你的IP地址:5173'], // 允许的源
+  credentials: true
+}));
 app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,8 +43,9 @@ async function startServer() {
     // 初始化数据库
     await initDatabase();
 
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`服务器运行在 http://localhost:${PORT}`);
+      console.log(`局域网访问: http://你的IP地址:${PORT}`);
       console.log(`API文档: http://localhost:${PORT}/api/todos`);
       console.log(`健康检查: http://localhost:${PORT}/health`);
     });
