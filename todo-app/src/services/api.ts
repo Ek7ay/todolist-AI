@@ -1,5 +1,7 @@
 // API 基础配置
-const API_BASE_URL = 'http://localhost:60001/api';
+const API_BASE_URL = import.meta.env.DEV
+  ? 'http://10.112.71.7:60001/api'  // 开发环境使用IP地址
+  : 'http://localhost:60001/api';   // 生产环境使用localhost
 
 export interface TodoItem {
   id: number;
@@ -110,7 +112,10 @@ export const todoApi = {
 // 健康检查
 export async function checkApiHealth(): Promise<boolean> {
   try {
-    const response = await fetch('http://localhost:60001/health');
+    const healthUrl = import.meta.env.DEV
+      ? 'http://10.112.71.7:60001/health'
+      : 'http://localhost:60001/health';
+    const response = await fetch(healthUrl);
     return response.ok;
   } catch {
     return false;

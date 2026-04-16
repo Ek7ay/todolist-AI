@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 60001;
 // 中间件
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://你的IP地址:5173'], // 允许的源
+  origin: ['http://localhost:5173', 'http://10.112.71.7:5173'], // 允许的源
   credentials: true
 }));
 app.use(morgan('combined'));
