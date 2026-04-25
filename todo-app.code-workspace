@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "../todo-app"
+			"path": "./todo-app"
 		},
 		{
-			"path": "../todo-backend"
+			"path": "./todo-backend"
 		}
 	],
 	"settings": {}
