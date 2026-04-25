@@ -32,7 +32,7 @@
         <!-- API 连接状态提示 -->
         <div v-if="!apiConnected" class="connection-status">
           <el-alert
-            title="后端服务未连接，请确保后端服务器正在运行 (http://localhost:3000)"
+            title="后端服务未连接，请确保后端服务器正在运行 (http://localhost:60001)"
             type="warning"
             show-icon
           />
