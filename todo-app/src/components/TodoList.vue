@@ -66,7 +66,6 @@
           color="linear-gradient(90deg, #667eea, #764ba2)"
           class="todo-progress"
         />
-      </div>
 
       <!-- Filter Tabs -->
       <div class="filter-tabs" v-if="todos.length > 0">

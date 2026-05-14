@@ -4,7 +4,7 @@ const mysql = require('mysql2/promise');
 const dbConfig = {
   host: 'localhost',
   user: 'root',
-  password: 'na6021023',
+  password: '123456',
   port: 3306,
   database: 'todo_app'
 };
