@@ -51,21 +51,13 @@
         </el-input>
       </div>
 
-      <!-- Connection Warning -->
-      <el-alert
-        v-if="!apiConnected"
-        title="Backend service is not connected. Please ensure the backend server is running."
-        type="warning"
-        show-icon
-        :closable="false"
-        class="connection-alert"
-      />
-
-      <!-- Progress Section -->
-      <div class="progress-section" v-if="todos.length > 0">
-        <div class="progress-header">
-          <span class="progress-title">Progress</span>
-          <span class="progress-text">{{ completedCount }}/{{ todos.length }} completed</span>
+        <!-- API 连接状态提示 -->
+        <div v-if="!apiConnected" class="connection-status">
+          <el-alert
+            title="后端服务未连接，请确保后端服务器正在运行 (http://localhost:60001)"
+            type="warning"
+            show-icon
+          />
         </div>
         <el-progress
           :percentage="progressPercent"

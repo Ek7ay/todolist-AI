@@ -21,6 +21,9 @@ todo-backend/.env
 ehthumbs.db
 Thumbs.db
 
+# Claude AI config
+.claude/
+
 # Editor directories and files
 .vscode/
 !.vscode/settings.json
