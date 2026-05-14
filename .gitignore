@@ -71,3 +71,5 @@ dump.rdb
 # MySQL
 *.sql
 mysql.pid
+
+.claude
